@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 
 const App = () => {
   const [step, setStep] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
 
   function handlePrevious(){
     if (step > 1) setStep(step - 1);
@@ -17,6 +18,11 @@ const App = () => {
     if (step < 3) setStep(step + 1);
   }
   return (
+    <>
+      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+        &times;
+      </button>
+    { isOpen && (
     <div className='steps'>
       <div className="numbers">
         <div className={step >= 1 ? "active" : ""}>1</div>
@@ -30,6 +36,9 @@ const App = () => {
 
       </div>
     </div>
+    )
+    }
+  </>
   )
 }
 

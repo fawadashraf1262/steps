@@ -10,6 +10,7 @@ body {
 }
 
 .steps {
+  /* display: none; */
   width: 600px;
   background-color: #f7f7f7;
   border: 2px solid rgb(238, 238, 238);
